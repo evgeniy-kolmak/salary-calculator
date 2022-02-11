@@ -189,7 +189,7 @@ selectElementExperience.addEventListener('change', function () {
 let selectElementHardshipАllowance = document.getElementById("hardship-allowance");
 selectElementHardshipАllowance.addEventListener('change', function () {
   let index = selectElementHardshipАllowance.selectedIndex;
-  showHardship.innerHTML = `Надбавка за вредность ${(tariffRateFirst * hardshipАllowance[index]).toFixed(2)} копеек в час`;
+  showHardship.innerHTML = `Вредность - ${(tariffRateFirst * hardshipАllowance[index]).toFixed(2)} копеек в час`;
 
 });
 
