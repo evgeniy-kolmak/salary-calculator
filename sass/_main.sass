@@ -1,0 +1,219 @@
+.main
+  display: flex
+  align-items: center
+  padding: 40px 0
+.wrapper
+  display: flex
+  align-items: center
+  flex-direction: column
+  background-image: linear-gradient(60deg, #ACC7D5 0%, #D4EAFA 100%)
+  width: 455px
+  border-radius: 40px
+  box-shadow: 0px 5px 17px rgba(58, 57, 57, 0.2)
+  padding: 0 30px
+
+  &-select
+    display: flex
+    align-items: center
+    flex-direction: column
+    width: 100%
+    padding: 30px 20px
+    background-image: url(..//img/bg.svg)
+
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center center
+    margin: 10px 0 20px 0
+
+.calc, .output, .prime
+  display: none
+
+  &-title
+    color: #0B4870
+    font-weight: 600
+    line-height: 35px
+    font-size: 30px
+    margin-bottom: 15px
+    text-transform: uppercase
+
+.workout-hours
+  background-image: url(../img/hour.svg)
+  background-repeat: no-repeat
+  background-position: center left 20px
+.bonus
+  background-image: url(../img/bonus.svg)
+  background-repeat: no-repeat
+  background-position: center left 20px
+.night-hours
+  background-image: url(../img/night.svg)
+  background-repeat: no-repeat
+  background-position: center left 20px
+  margin: 0
+.one-time-bonus
+  background-image: url(../img/onetime.svg)
+  background-repeat: no-repeat
+  background-position: center left 20px
+  margin: 0
+
+.tariff, .experience, .hardship
+  background-image: url(../img/arrow.svg)
+  background-repeat: no-repeat
+  background-position-x: calc(100% - 20px)
+  background-position-y: 50%
+
+.tariff
+  margin: 0
+
+.checkbox
+  margin: auto
+  display: flex
+  align-items: center
+  justify-content: center
+  box-shadow: 0px 3px 10px rgba(85, 83, 83, 0.274)
+  background-color: #3F4353
+  border-radius: 15px
+  padding: 20px
+  width: 90%
+  margin-bottom: 15px
+  &__title
+    color: #F8F8F8
+    text-transform: uppercase
+
+.add-input
+  display: flex
+  align-items: center
+  justify-content: space-around
+  background-color: #cadce68c
+  box-shadow: 0px 3px 10px rgba(119, 115, 115, 0.103)
+  padding: 25px 10px
+  border-radius: 20px
+
+.show-result
+  text-align: center
+  margin-top: 20px
+  color: #0B4870
+  font-weight: 700
+  line-height: 30px
+  font-size: 18px
+  text-transform: uppercase
+  &--dirty
+    margin-top: 10px
+    color: #EF6669
+    text-transform: none
+
+.button
+  margin-top: 20px
+  border: none
+  background-image: linear-gradient(75deg, #49A3F3 0%, #3e9ef1 100%)
+  color: #fff
+  border-radius: 20px
+  padding: 15px 100px
+  font-size: 35px
+  line-height: 35px
+  font-weight: 600
+  box-shadow: 0px 3px 10px rgba(85, 83, 83, 0.274)
+  cursor: pointer
+
+.value
+  &-item
+    border: 2px solid #0B4870
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 400px
+    list-style: none
+    text-align: center
+    margin: 8px 0
+    padding: 5px
+    border-radius: 4px
+  &-title
+    margin: 0
+
+.prime
+  align-items: center
+  justify-content: space-between
+  height: 930px
+  &-image
+    margin-bottom: 30px
+  &-text
+    display: flex
+    align-items: center
+    flex-direction: column
+    &__dicription
+      font-size: 28px
+      font-weight: 600
+      line-height: 30px
+      text-align: center
+      margin-bottom: 20px
+    &__disclaimer
+      font-size: 19px
+      font-weight: 300
+      line-height: 20px
+      text-align: center
+      margin-left: 10px
+      &--wrapper
+        display: flex
+        align-items: center
+        background-color: #cadce68c
+        box-shadow: 0px 3px 10px rgba(119, 115, 115, 0.103)
+        padding: 25px 10px
+        border-radius: 20px
+  &-content
+    display: flex
+    align-items: center
+    flex-direction: column
+    padding-top: 10%
+    color: #306385
+
+.start, .backout
+  margin-bottom: 20px
+
+.start
+  opacity: 0
+
+.norm-hours
+  font-size: 20px
+  line-height: 26px
+  font-weight: 400
+  text-decoration: underline
+  margin-bottom: 40px
+.active
+  display: flex
+
+.preloader
+  display: none
+  z-index: 1000
+  position: fixed
+  top: 25%
+  left: 50%
+  transform: translate(-50%, 50%)
+  &-active
+    background-image: linear-gradient(60deg, #ACC7D5 0%, #D4EAFA 100%)
+    opacity: .2
+    width: 455px
+    border-radius: 40px
+    padding: 20px 30px
+    border: 1px solid #636060
+
+.title
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 8px
+    left: -20px
+    background-color: #49A3F3
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    border: 1px solid #ccc
+  &::after
+    content: ''
+    position: absolute
+    top: 8px
+    right: -20px
+    background-color: #EF6669
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    border: 1px solid #ccc

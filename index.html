@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+
+
+<body>
+  <main class="main">
+    <div class="container">
+      <div id="prime" class="active wrapper prime">
+        <div class="prime-content">
+          <img src="img/main.svg" alt="Фото главного экрана" class="prime-image">
+          <div class="prime-text">
+            <span class="prime-text__dicription">
+              Надоело сидеть в неведении? Переживать? Ждать расчетный лист? Посчитай сам(а)
+            </span>
+            <span id="norm-hours" class="norm-hours"></span>
+            <div class="prime-text__disclaimer--wrapper">
+              <img class="heed" src="img/heed.svg" alt="Внимание">
+              <span class="prime-text__disclaimer">
+                Приложение не хранит и не отправляет никаких данных. Вычисления могут
+                быть неточными.</span>
+            </div>
+            <!-- /.disclaimer--wrapper -->
+          </div>
+          <!-- /.prime-text -->
+        </div>
+        <!-- /.prime-content -->
+        <button id="start" class="button start">Начать</button>
+      </div>
+      <!-- /.wrapper -->
+      <div id="calc" class="wrapper calc">
+        <div id="preloader" class="preloader">
+          <div class="cssload-loading">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+        <!-- /.preloader -->
+        <div id="preloader-wrapper">
+          <h1 class="calc-title">Калькулятор зарплаты</h1>
+          <form id="form" class="form">
+            <div class="input-wrapper">
+              <input class="input workout-hours" placeholder="Отработаннные часы" id="work-out-hour" autocomplete="off"
+                type="number">
+              <label name="label" id="show-hours" class="show-hours label-select"></label>
+              <input class="input bonus" id="bonus" placeholder="Премия" autocomplete="off" type="number">
+              <label name="label" id="show-bonus" class="show-bonus label-select"></label>
+            </div>
+            <!-- /.input-wrapper -->
+            <div class=" wrapper-select">
+              <select class="select tariff" id="tariff-rate">
+                <option>Выберите разряд</option>
+                <option> 3 разряд</option>
+                <option>4 разряд</option>
+                <option>4 разряд (коэффициент +)</option>
+                <option>4 разряд (коэффициент ++)</option>
+                <option>5 разряд</option>
+              </select>
+              <label id="show-tariff" class="show-tariff label-select"></label>
+              <select class="select experience" id="work-experience">
+                <option>Ваш стаж</option>
+                <option>Менее года</option>
+                <option>От 1 года до 3</option>
+                <opttion>От 3 до 7 лет </option>
+                  <option>7 лет и более</option>
+              </select>
+              <label id="show-experience" class="show-experience label-select"></label>
+              <select class="select hardship" id="hardship-allowance">
+                <option>Надбавка за вредность</option>
+                <option>10%</option>
+                <option>14%</option>
+              </select>
+              <label id="show-hardship" class="show-hardship label-select"></label>
+            </div>
+            <div class="checkbox pretty p-switch p-fill">
+              <input checked class="checkbox__input" id="check-box" type="checkbox" />
+              <div class="state p-success checkbox__div">
+
+                <label class="checkbox__title">Индексация доходов</label>
+              </div>
+            </div>
+            <div class="add-input">
+              <input class="input-small input night-hours" id="night-hours" type="number" placeholder="Ночные часы"
+                autocomplete="off">
+              <input class="input-small input one-time-bonus" id="one-time-bonus" type="number"
+                placeholder="Разовая премия" autocomplete="off">
+            </div>
+            <!-- /.add-input -->
+          </form>
+          <!-- ./form -->
+          <button id="button" class="button">Рассчитать</button>
+        </div>
+        <!-- /.wrapper -->
+      </div>
+      <!-- /.preloader-wrapper -->
+      <div id="output" class="wrapper output">
+
+        <div class="show-result" id="show-result"></div>
+
+        <div class="show-result show-result--dirty" id="output-dirtysalary"></div>
+        <img class="back" src="img/cash.svg" alt="Фото расчетного экрана">
+
+        <h2 class="title">Начисления</h2>
+        <ul>
+          <li class="value-item">
+            <h3 class="value-title">Оклад</h3>
+            <span id="output-basesalary" class="value"></span>
+          </li>
+          <li class="value-item">
+            <h3 class="value-title">Премия</h3>
+            <span id="output-bonus" class="value"></span>
+          </li>
+          <li class="value-item">
+            <h3 class="value-title">Надбавка за стаж</h3>
+            <span id="output-experience" class="value"></span>
+          </li>
+          <li class="value-item">
+            <h3 class="value-title">Профмастерство</h3>
+            <span id="output-skills" class="value"></span>
+          </li>
+          <li class="value-item">
+            <h3 class="value-title">Вредность</h3>
+            <span id="output-hardship" class="value"></span>
+          </li>
+          <li class="value-item">
+            <h3 class="value-title">Индексация доходов</h3>
+            <span id="output-index" class="value"></span>
+          </li>
+          <li class="value-item">
+            <h3 class="value-title">Сверхурочные</h3>
+            <span id="output-overhour" class="value"></span>
+          </li>
+          <li class="value-item">
+            <h3 class="value-title">Ночные часы</h3>
+            <span id="output-nighthours" class="value"></span>
+          </li>
+          <li class="value-item">
+            <h3 class="value-title">Разовая премия</h3>
+            <span id="output-onetimebonus" class="value"></span>
+          </li>
+        </ul>
+        <!-- Вычеты -->
+        <h2 class="title">Вычеты</h2>
+        <ul>
+          <li class="value-item">
+            <h3 class="value-title">Подоходный налог</h3>
+            <span id="output-surtax" class="value"></span>
+          </li>
+          <li class="value-item">
+            <h3 class="value-title">Профсоюз</h3>
+            <span id="output-pensiontax" class="value"></span>
+          </li>
+          <li class="value-item">
+            <h3 class="value-title">Пенсионный</h3>
+            <span id="output-union" class="value"></span>
+          </li>
+        </ul>
+        <button id="backout" class="backout button">Назад</button>
+      </div>
+      <!-- /.wrapper -->
+    </div>
+    <!-- /.container -->
+  </main>
+  <!-- /.main -->
+
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
