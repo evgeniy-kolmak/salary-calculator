@@ -115,7 +115,7 @@ button.onclick = () => {
 
 
     //главное
-    showResult.innerHTML = `Зарплата за месяц составит <u>${clearSalary.toFixed(2)}</u> BYN`;
+    showResult.innerHTML = `Зарплата за месяц составит<br><u>${clearSalary.toFixed(2)}</u> BYN`;
 
     const outputDirtySalary = document.querySelector('#output-dirtysalary');
     outputDirtySalary.innerHTML = `Всего начислено  <u>${(dirtySalary + getIndexationIncome()).toFixed(2)}</u> BYN`;
