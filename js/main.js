@@ -1,4 +1,4 @@
-const tariffRate = [0, 1.97, 2.29, 2.36, 2.46, 2.71];
+const tariffRate = [0, 1.69, 1.97, 2.29, 2.36, 2.46, 2.52, 2.71, 3.46];
 const workExperience = [0, 0, 0.08, 0.12, 0.15];
 const hardshipАllowance = [0, 0.1, 0.14];
 const tariffRateFirst = 1.076;
@@ -74,19 +74,23 @@ button.onclick = () => {
     // Профмастерство
     const professionalSkills = () => {
       let result
-
-      if (tariffRate[selectElementTariff.selectedIndex] < 2) {
+      if (tariffRate[selectElementTariff.selectedIndex] < 1.9) {
+        result = 0;
+        return result;
+      } else if (tariffRate[selectElementTariff.selectedIndex] === 1.97) {
         result = 0.15;
         return result;
-      } else if (tariffRate[selectElementTariff.selectedIndex] === 2.71) {
+      } else if (tariffRate[selectElementTariff.selectedIndex] === 2.71 || tariffRate[selectElementTariff.selectedIndex] === 2.52) {
         result = 0.21;
+        return result;
+      } else if (tariffRate[selectElementTariff.selectedIndex] > 3) {
+        result = 0.23;
         return result;
       } else {
         result = 0.18;
         return result;
       }
     }
-
 
     // Сверхурочные
     const getOverHour = (workOutHour) => {
@@ -112,7 +116,6 @@ button.onclick = () => {
     let dirtySalary = baseSalary + (baseSalary * bonus()) + (baseSalary * workExperience[selectElementExperience.selectedIndex]) + (baseSalary * professionalSkills()) + hardShip + (getOverHour(workOutHour) * tariffRate[selectElementTariff.selectedIndex]) + getNightHours(nightHours) + (+oneTimeBonus);
     // Зарплата чистыми
     let clearSalary = dirtySalary - (dirtySalary * surtax) - (dirtySalary * pensionTax) - (dirtySalary * union) + getIndexationIncome();
-
 
     //главное
     showResult.innerHTML = `Зарплата за месяц составит<br><u>${clearSalary.toFixed(2)}</u> BYN`;
