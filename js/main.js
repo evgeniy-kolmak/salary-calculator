@@ -54,7 +54,7 @@ button.onclick = () => {
     const getIndexationIncome = () => {
       let result = 0;
       if (checkbox.checked) {
-        result = 68.70;
+        result = 98.70;
         return result;
       }
       else {
