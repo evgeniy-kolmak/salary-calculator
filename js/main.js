@@ -1,10 +1,10 @@
-const tariffRate = [0, 1.69, 1.97, 2.29, 2.36, 2.46, 2.52, 2.71, 3.46];
+const tariffRate = [0, 1.86, 2.16, 2.51, 2.59, 2.71, 2.77, 2.98, 4.07];
 const workExperience = [0, 0, 0.08, 0.12, 0.15];
 const hardshipАllowance = [0, 0.1, 0.14];
 const tariffRateFirst = 1.076;
 const surtax = 0.13;
 const union = pensionTax = 0.01;
-const monthHours = [159, 160, 175, 168, 159, 176, 168, 184, 176, 168, 168, 176];
+const monthHours = [167, 160, 175, 151, 167, 176, 160, 184, 168, 176, 167, 160];
 const date = new Date();
 const month = date.getMonth();
 
@@ -54,7 +54,7 @@ button.onclick = () => {
     const getIndexationIncome = () => {
       let result = 0;
       if (checkbox.checked) {
-        result = 98.70;
+        result = 147.60;
         return result;
       }
       else {
@@ -74,16 +74,16 @@ button.onclick = () => {
     // Профмастерство
     const professionalSkills = () => {
       let result
-      if (tariffRate[selectElementTariff.selectedIndex] < 1.9) {
+      if (tariffRate[selectElementTariff.selectedIndex] < 2) {
         result = 0;
         return result;
-      } else if (tariffRate[selectElementTariff.selectedIndex] === 1.97) {
+      } else if (tariffRate[selectElementTariff.selectedIndex] === 2.16) {
         result = 0.15;
         return result;
-      } else if (tariffRate[selectElementTariff.selectedIndex] === 2.71 || tariffRate[selectElementTariff.selectedIndex] === 2.52) {
+      } else if (tariffRate[selectElementTariff.selectedIndex] === 2.98 || tariffRate[selectElementTariff.selectedIndex] === 2.77) {
         result = 0.21;
         return result;
-      } else if (tariffRate[selectElementTariff.selectedIndex] > 3) {
+      } else if (tariffRate[selectElementTariff.selectedIndex] > 4) {
         result = 0.23;
         return result;
       } else {
